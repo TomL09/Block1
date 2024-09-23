@@ -8,35 +8,11 @@ Les méthodes GET et POST sont deux façons courantes d'envoyer des informations
 
 La méthode GET est principalement utilisée pour récupérer des informations d'un serveur. Les données sont envoyées en ajoutant des paramètres à l'URL. Cela signifie que les informations sont visibles directement dans la barre d'adresse du navigateur.
 
-Exemple :
-
-Imaginons que l'on souhaite rechercher des informations sur un site web, comme le titre d'un livre. L'URL pourrait ressembler à ceci :
-
-https://www.site-exemple.com/recherche?titre=LePetitPrince
-
-Ici, "recherche" est la page du serveur qui traite la requête, et titre=LePetitPrince est le paramètre que l'on envoie. Le serveur va traiter cette demande et renvoyer les informations associées au titre "Le Petit Prince".
-
 2. Méthode POST :
 
 La méthode POST, quant à elle, est utilisée pour envoyer des données de manière plus sécurisée. Les informations ne sont pas visibles dans l'URL, car elles sont envoyées dans le corps de la requête HTTP. Cela permet de transmettre 
 
 des données plus volumineuses et plus confidentielles.
-
-Exemple :
-
-Supposons que l'on veuille soumettre un formulaire d'inscription sur un site web. L'URL pourrait être :
-
-https://www.site-exemple.com/inscription
-
-Contrairement à la méthode GET, les informations comme le nom, l'email, et le mot de passe de l'utilisateur seraient envoyées dans le corps de la requête et non dans l'URL. Par exemple :
-
-POST /inscription HTTP/1.1
-
-Host: www.site-exemple.com
-
-Content-Type: application/x-www-form-urlencoded
-
-nom=Dupont&email=dupont@example.com&motdepasse=1234secure
 
 
 ## Question 2
@@ -112,7 +88,7 @@ Les codes de statut HTTP se décomposent en 5 grandes familles :
 
 ## Question 7
 
-La négociation de contenu en HTTP est un processus par lequel un serveur web détermine la meilleure représentation d'une ressource à renvoyer en fonction des préférences exprimées par le client (navigateur web). Ce mécanisme permet de répondre aux divers besoins et capacités des clients, comme la langue, le format ou l'encodage des données.
+La négociation de contenu en HTTP est un processus par lequel un serveur web détermine la meilleure représentation d'une ressource à renvoyer en fonction des préférences exprimées par le client (navigateur web). Ce mécanisme permet de répondre aux divers besoins et capacités des clients.
 
 ## Question 10
 
@@ -127,4 +103,3 @@ La négociation de contenu en HTTP est un processus par lequel un serveur web d�
 | **Authorization**  | Contient les informations d'authentification pour accéder à une ressource protégée. | `Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l`        |
 | **Referer**        | Indique l'URL de la page précédente à partir de laquelle la requête a été envoyée. | `Referer: https://www.google.com`                       |
 | **Cookie**         | Envoie les cookies du client au serveur pour l'identification de la session ou d'autres informations d'état. | `Cookie: sessionId=abc123; theme=dark`             |
-| **Cache-Control**  | Indique les directives de gestion du cache pour la requête.                 | `Cache-Control: no-cache`                                      |
