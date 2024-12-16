@@ -1,95 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio Bloc 1 SLAM.">
-  <title>Portfolio - Bloc 1 SLAM</title>
-  <link rel="stylesheet" href="./assets/css/index.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets-img/favicon.ico">
+  <title>Index de Cours SLAM</title>
+  <link rel="stylesheet" href="./assets/css/index/index.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Bloc 1 SLAM</h1>
-      <p class="intro">Bienvenue sur la présentation de mes projets réalisés durant le Bloc 1 SLAM. Découvrez mes travaux pratiques et mes réalisations !</p>
-    </div>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-</header>
 
-  <nav id="navbar">
-    <ul>
-      <li><a href="#td1">TD1</a></li>
-      <li><a href="#td2">TD2</a></li>
-      <li><a href="#td3">TD3</a></li>
-      <li><a href="#td4">TD4</a></li>
-    </ul>
-    <button id="menuToggle" class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </nav>
+  <header>
+    <div class="header-container">
+      <div class="profile">
+        <h1>Laisney Tom</h1>
+      </div>
+      <nav>
+        <a href="https://github.com/TomL09" id="link1" target="_blank" rel="noopener noreferrer">Mon Github</a>
+        <button id="modeToggle" onclick="toggleMode()" aria-label="Toggle night mode">🌙</button>
+      </nav>
+    </div>
+  </header>
 
   <main>
-
-    <section id="td1">
-      <h2>Travaux Dirigés 1</h2>
-      <p>Voici les réalisations de mon premier TD :</p>
-      <ul>
-        <li><a href="./pages/TD1/MethodesGESTETPOST.md">TD 1 - Questions</a></li>
-      </ul>
+    <section class="intro">
+      <h2>Bienvenue !</h2>
+      <p class="typing">ici tous les projets réalisés dans les TDs.</p>
     </section>
 
-    <section id="td2">
-      <h2>Travaux Dirigés 2</h2>
-      <p>Voici les projets du TD2 :</p>
-      <ul>
-        <li><a href="./pages/TD2/crepes.html">Recette de la pâte à crêpes</a></li>
-        <li><a href="./pages/TD2/status-juridiques.html">Status juridiques</a></li>
-        <li><a href="./pages/TD2/mention-legales-1.html">Mentions légales</a></li>
-      </ul>
-    </section>
+    <div class="buttons">
+      <button id="btnAfficher" onclick="btnToutAfficher()">🔍 Tout afficher</button>
+      <button id="btnCacherTout" onclick="btnRienAfficher()">🚫 Tout cacher</button>
+    </div>
 
-    <section id="td3">
-      <h2>Travaux Dirigés 3</h2>
-      <p>Voici les projets du TD3 :</p>
-      <ul>
-        <li><a href="./pages/TD3/about-us.html">Page "About Us"</a></li>
-        <li><a href="./pages/TD3/blog.html">Notre Blog</a></li>
-        <li><a href="./pages/TD3/conseil-gestion.html">Conseil-Gestion</a></li>
+    <section class="folders">
+      <div class="folder" onclick="toggleProjects('td1')">📁 TD1</div>
+      <ul id="td1" class="projects">
+        <li><a href="https://github.com/TomL09/Slam-Bloc1/blob/main/docs/pages/td1/MethodeGETetPOST.md">Questions</a></li>
       </ul>
-    </section>
 
-    <section id="td4">
-      <h2>Travaux Dirigés 4</h2>
-      <p>Voici les projets du TD4 en JavaScript :</p>
-      <ul>
-        <li><a href="./pages/TD4/calculatrice.html">Calculatrice JS</a></li>
-        <li><a href="./pages/TD4/exercice.html">Exercice JS</a></li>
-        <li><a href="./pages/TD4/toDoList.html">ToDoList JS</a></li>
+      <div class="folder" onclick="toggleProjects('td2')">📁 TD2</div>
+      <ul id="td2" class="projects">
+        <li><a href="./pages/td2/mention-légales.html">Mentions légales</a></li>
+        <li><a href="./pages/td2/pata-a-crepe.html">Pâtes à crêpes</a></li>
+      </ul>
+
+      <div class="folder" onclick="toggleProjects('td3')">📁 TD3</div>
+      <ul id="td3" class="projects">
+        <li><a href="./pages/td3/conseil-gestion.html">Conseil Gestion</a></li>
+        <li><a href="./pages/td3/Blog.html">Blog</a></li>
+        <li><a href="./pages/td3/A Propos de nous.html">A Propos de nous</a></li>
+      </ul>
+
+      <div class="folder" onclick="toggleProjects('td4')">📁 TD4</div>
+      <ul id="td4" class="projects">
+        <li><a href="./../docs/pages/td4/calculatrice.html">Calculatrice</a></li>
+        <li><a href="./pages/td4/todolist.html">ToDoList</a></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2024 - Index de SIMSEK Alexandre</p>
+    <p>&copy; 2024 Index de Lothaire. Tous droits réservés.</p>
   </footer>
 
   <script>
-    // Changer le thème entre clair et sombre
-function toggleTheme() {
-  document.body.classList.toggle('dark-theme');
-  const themeButton = document.querySelector('.theme-toggle');
-  if (document.body.classList.contains('dark-theme')) {
-    themeButton.textContent = '🌞';
-  } else {
-    themeButton.textContent = '🌙'; 
-  }
-}
+    
+    function toggleProjects(tdId) {
+      const projectsList = document.getElementById(tdId);
+      projectsList.style.display = projectsList.style.display === "none" || projectsList.style.display === "" ? "block" : "none";
+    }
+
+  
+    function btnToutAfficher() {
+      const allProjects = document.querySelectorAll(".projects");
+      allProjects.forEach(project => (project.style.display = "block"));
+    }
 
 
-function toggleMenu() {
-  const menu = document.querySelector('nav ul');
-  menu.classList.toggle('show');
-}
-</script>
+    function btnRienAfficher() {
+      const allProjects = document.querySelectorAll(".projects");
+      allProjects.forEach(project => (project.style.display = "none"));
+    }
+
+  
+    function toggleMode() {
+      var body = document.body;
+      var button = document.getElementById('modeToggle');
+      
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        button.textContent = "🌞"; 
+      } else {
+        button.textContent = "🌙"; 
+      }
+    }
+  </script>
+
 </body>
 </html>
